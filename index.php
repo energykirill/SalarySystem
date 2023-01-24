@@ -4,7 +4,7 @@ include "manager.php";
 include "salary.php";
 include "salaryreport.php";
 /**
- * Пример использования классов Employee и Manager
+ * Example of using the Employee and Manager classes
  * @example
  */
 $Tom=new Employee("Tom",20,"123");
@@ -15,7 +15,7 @@ $Paul = new Employee("Paul", 32,"103");
 $Jack=new Manager("Jack", 78, "222", array($Tom,$Robert));
 $John=new Manager("John",28, "745", array($Lina,$David,$Paul,$Jack));
 /**
- * Пример импользования классов ManagerSalary и EmployeeSalary
+ * Example of using the ManagerSalary and EmployeeSalary classes
  * @example
  */
 $John->setSalary(ManagerSalary::total_hours(120));
@@ -27,7 +27,7 @@ $David->setSalary(EmployeeSalary::total_hours(20));
 $Paul->setSalary(EmployeeSalary::total_hours(30));
 
 /**
- * Пример использования класса SalaryReport
+ * Example of using the SalaryReport class
  * @example
  */
 $Report = new SalaryReport($John);

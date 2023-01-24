@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Интерфейс, показывающий какие типы расчёта нужно реализовать
+ * An interface showing which types of calculations need to be implemented
  */
 interface IMethods{
     public static function total_hours ($hours);
@@ -9,11 +9,11 @@ interface IMethods{
 }
 
 /**
- * Класс, расчитывающий ЗП для Сотрудника
+ * A class that calculates salary for an Employee
  */
 class EmployeeSalary implements IMethods {
     /**
-     * Метод для расчёта почасовой ЗП
+     * Method for calculating hourly salary
      * @param $hours
      * @return int
      */
@@ -22,7 +22,7 @@ class EmployeeSalary implements IMethods {
     }
 
     /**
-     * Метод для расчёта окладной ЗП
+     * Method for calculating the stable salary
      * @return int
      */
     public static function stable ():int{
@@ -31,11 +31,11 @@ class EmployeeSalary implements IMethods {
 }
 
 /**
- * Класс, расчитывающий ЗП для Менеджера
+ * A class that calculates salary for a Manager
  */
 class ManagerSalary implements IMethods {
     /**
-     * Метод для расчёта почасовой ЗП
+     * Method for calculating hourly salary
      * @param $hours
      * @return int
      */
@@ -44,7 +44,7 @@ class ManagerSalary implements IMethods {
     }
 
     /**
-     * Метод для расчёта окладной ЗП
+     * Method for calculating the stable salary
      * @return int
      */
     public static function stable():int{

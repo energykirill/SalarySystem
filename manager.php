@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Класс для создания объектов Менеджер
+ * Class for creating Manager objects
  */
 class Manager extends Employee{
     private $state = array();
 
     /**
-     * Конструктор для создания объектов Менеджер
+     * Constructor for creating objects Manager
      * @param $name
      * @param $age
      * @param $number
@@ -19,7 +19,7 @@ class Manager extends Employee{
     }
 
     /**
-     * Метод, возвращающий штат сотрудников, прикрепленный к данному менеджеру
+     * A method that returns the staff attached to this manager
      * @return array
      */
     public function getState():array{
@@ -27,7 +27,7 @@ class Manager extends Employee{
     }
 
     /**
-     * Метод, добавляющий в штат сотрудника
+     * The method that adds an employee to the staff
      * @param $people
      * @return void
      */

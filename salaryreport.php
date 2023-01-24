@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Класс для создания отчёта, содержащий зарплату сотрудников
+ * A class for creating a report containing the salary of employees
  */
 class SalaryReport
 {
     /**
-     * Конструктор для создания отчёта
+     * Constructor for creating a report
      * @param $object
      */
     function __construct($object){

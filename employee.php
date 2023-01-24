@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Класс для создания объектов Сотрудник
+ * Class for creating Employee objects
  */
 class Employee{
     public readonly string $name;
@@ -11,7 +11,7 @@ class Employee{
     public readonly int $salary;
 
     /**
-     * Конструктор для создания объктов Сотрудник
+     * Constructor for creating objects Employee
      * @param $name
      * @param $age
      * @param $number
@@ -25,7 +25,7 @@ class Employee{
     }
 
     /**
-     * Метод, устанавливающий зарплату для конкретного сотрудника
+     * A method that sets the salary for a specific employee
      * @param $salary
      * @return void
      */
