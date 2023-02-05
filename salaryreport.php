@@ -1,23 +1,27 @@
 <?php
-
 /**
  * A class for creating a report containing the salary of employees
  */
 class SalaryReport
 {
+    private array $state;
+
     /**
      * Constructor for creating a report
-     * @param $object
+     * @param array $object
      */
-    function __construct($object){
-        $state = $object->getState();
-        echo "Менеджер Имя: $object->name,  Возраст: $object->age, Телефон: $object->number, Зарплата: $object->salary<br/>";
-        foreach ($state as $person) {
-            if ($person instanceof Manager) {
-                echo "-";
-                $this->__construct($person);
-            }
-            else echo "-$person->post Имя: $person->name,  Возраст: $person->age, Телефон: $person->number, Зарплата: $person->salary<br/>";
-        }
+    public function __construct(array $object)
+    {
+        $this->state=$object;
+    }
+
+    /**
+     * Method for displaying the salary report
+     * @return void
+     */
+    public function get_report()
+    {
+        foreach ($this->state as $person)
+            echo "-$person->post Имя: $person->name,  Возраст: $person->age, Телефон: $person->number, Зарплата: $person->salary<br/>";
     }
 }

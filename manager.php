@@ -1,28 +1,32 @@
 <?php
 
+
 /**
  * Class for creating Manager objects
  */
-class Manager extends Employee{
-    private $state = array();
+class Manager extends Employee
+{
+    private array $state;
 
     /**
      * Constructor for creating objects Manager
-     * @param $name
-     * @param $age
-     * @param $number
-     * @param $state
+     * @param string $name
+     * @param int $age
+     * @param string $number
+     * @param array $state
      */
-    function __construct($name, $age, $number, $state){
+    public function __construct(string $name, int $age, string $number, array $state)
+    {
         parent::__construct($name, $age, $number, "Менеджер");
-        $this->state=$state;
+        $this->state = $state;
     }
 
     /**
      * A method that returns the staff attached to this manager
      * @return array
      */
-    public function getState():array{
+    public function getState(): array
+    {
         return $this->state;
     }
 
@@ -31,7 +35,8 @@ class Manager extends Employee{
      * @param $people
      * @return void
      */
-    public function add_State($people){
+    public function add_State($people)
+    {
         array_push($this->state, $people);
     }
 }

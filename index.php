@@ -1,7 +1,8 @@
 <?php
 include "employee.php";
 include "manager.php";
-include "salary.php";
+include "hourlysalary.php";
+include "stablesalary.php";
 include "salaryreport.php";
 /**
  * Example of using the Employee and Manager classes
@@ -18,17 +19,18 @@ $John=new Manager("John",28, "745", array($Lina,$David,$Paul,$Jack));
  * Example of using the ManagerSalary and EmployeeSalary classes
  * @example
  */
-$John->setSalary(ManagerSalary::total_hours(120));
-$Tom->setSalary(EmployeeSalary::stable());
-$Lina->setSalary(EmployeeSalary::total_hours(100));
-$Jack->setSalary(ManagerSalary::stable());
-$Robert->setSalary(EmployeeSalary::stable());
-$David->setSalary(EmployeeSalary::total_hours(20));
-$Paul->setSalary(EmployeeSalary::total_hours(30));
-
+$John->setSalary(HourlySalary::total_hours(120));
+$Tom->setSalary(StableSalary::total_stable());
+$Lina->setSalary(HourlySalary::total_hours(100));
+$Jack->setSalary(StableSalary::total_stable());
+$Robert->setSalary(StableSalary::total_stable());
+$David->setSalary(HourlySalary::total_hours(20));
+$Paul->setSalary(HourlySalary::total_hours(30));
 /**
  * Example of using the SalaryReport class
  * @example
  */
-$Report = new SalaryReport($John);
+$Report = new SalaryReport(array($John,$Tom,$Lina,$Jack,$Robert,$David,$Paul));
+$Report->get_report();
+
 

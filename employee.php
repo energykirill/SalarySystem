@@ -1,9 +1,9 @@
 <?php
-
 /**
  * Class for creating Employee objects
  */
-class Employee{
+class Employee
+{
     public readonly string $name;
     public readonly int $age;
     public readonly string $number;
@@ -12,24 +12,26 @@ class Employee{
 
     /**
      * Constructor for creating objects Employee
-     * @param $name
-     * @param $age
-     * @param $number
-     * @param $post
+     * @param string $name
+     * @param int $age
+     * @param string $number
+     * @param string $post
      */
-    function __construct($name, $age, $number="000", $post="Сотрудник"){
-        $this->name=$name;
-        $this->age=$age;
-        $this->number=$number;
-        $this->post=$post;
+    public function __construct(string $name, int $age, string $number = "000",  string $post = "Сотрудник")
+    {
+        $this->name = $name;
+        $this->age = $age;
+        $this->number = $number;
+        $this->post = $post;
     }
 
     /**
      * A method that sets the salary for a specific employee
-     * @param $salary
+     * @param int $salary
      * @return void
      */
-    public function setSalary($salary){
-        $this->salary=$salary;
+    public function setSalary(int $salary)
+    {
+        $this->salary = $salary;
     }
 }
