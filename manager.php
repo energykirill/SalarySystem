@@ -1,10 +1,10 @@
 <?php
-
+include 'IManager.php';
 
 /**
  * Class for creating Manager objects
  */
-class Manager extends Employee
+class Manager extends Employee implements IManager
 {
     private array $state;
 
@@ -13,11 +13,12 @@ class Manager extends Employee
      * @param string $name
      * @param int $age
      * @param string $number
+     * @param int $hourswork
      * @param array $state
      */
-    public function __construct(string $name, int $age, string $number, array $state)
+    public function __construct(string $name, int $age, string $number, array $state, int $hourswork = 0)
     {
-        parent::__construct($name, $age, $number, "Менеджер");
+        parent::__construct($name, $age, $number, $hourswork ,"Менеджер");
         $this->state = $state;
     }
 

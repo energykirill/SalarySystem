@@ -21,7 +21,14 @@ class SalaryReport
      */
     public function get_report()
     {
-        foreach ($this->state as $person)
-            echo "-$person->post Имя: $person->name,  Возраст: $person->age, Телефон: $person->number, Зарплата: $person->salary<br/>";
+        foreach ($this->state as $person) {
+            if ($person instanceof IManager) {
+                echo "-", $person->getPost(), " Имя: ", $person->getName(), " Зарплата: ", $person->getSalary(), '<br/>';
+                $statemanager = $person->getState();
+                foreach ($statemanager as $person)
+                    if ($person instanceof IEmployee)
+                    echo "--", $person->getPost(), " Имя: ", $person->getName(), " Зарплата: ", $person->getSalary(), '<br/>';
+            }
+        }
     }
 }
